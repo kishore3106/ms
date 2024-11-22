@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>tfar</title>
+    <style>
+        h1,form{
+    border: 2px solid black;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+}
+h1{
+    font-size: xx-large;
+    font-weight: bolder;
+    font-variant: small-caps;
+    background: linear-gradient(to bottom,red,yellow,red);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: grey;
+}
+form{
+    background: linear-gradient(to bottom,red,yellow,red)
+}
+
+    </style>
+</head>
+<body>
+    <h1 align="center" > power of a lamp filament</h1>
+    <form align="center" method='POST'>
+    {% csrf_token %}
+     
+    <div class="power">
+
+        <label for="INTENSITY">INTENSITY:</label>
+        <input type="text" name="INTENSITY" id="INTENSITY" placeholder="Enter the Value" value="{{i}}">
+    </div>
+    <br>
+    <div class="power">
+        <label for="RESISTANCE">RESISTANCE:</label>
+        <input type="text" name="RESISTANCE" id="RESISTANCE" placeholder="Enter the Value" value="{{r}}">
+    </div>
+    <br>
+    <input type="submit" value="CALCULATE">
+    <br>
+    <br>
+    <div class="power">
+        <label for="POWER">POWER:</label>
+        <input type="text" name="POWER" id="POWER" placeholder="Answer" value="{{power}}">
+        
+    </div>
+</form>
+</body>
+</html>
