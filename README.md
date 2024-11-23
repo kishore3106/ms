@@ -36,17 +36,20 @@ Publish the website in the given URL.
 
 tfar.html
 
+{% load static %}
 <html>
 <head>
     <title>tfar</title>
     <style>
-        h1,form{
+        
+h1{
     border: 2px solid black;
     padding: 20px;
     margin: 10px;
     border-radius: 5px;
-}
-h1{
+    position: fixed;
+    top: 200px;
+    right: 500px;
     font-size: xx-large;
     font-weight: bolder;
     font-variant: small-caps;
@@ -55,7 +58,21 @@ h1{
     color: grey;
 }
 form{
-    background: linear-gradient(to bottom,red,yellow,red);
+    border: 2px solid black;
+    background-color: rgba(128, 128, 128, 0.064) ;
+    padding: 30px;
+    margin: 10px;
+    border-radius: 10px;
+    width: 425px;
+    position: fixed;
+    top: 300px;
+    left: 527px;
+    background-image: url("{%static 'images/vijay.jpg' %}");
+    
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: left;
+    
 }
 
     </style>
@@ -67,12 +84,12 @@ form{
      
     <div class="power">
 
-        <label for="INTENSITY">INTENSITY:</label>
+        <label for="INTENSITY"><b>INTENSITY:</b></label>
         <input type="text" name="intensity" id="INTENSITY" placeholder="Enter the Value" value="{{i}}">
     </div>
     <br>
     <div class="power">
-        <label for="RESISTANCE">RESISTANCE:</label>
+        <label for="RESISTANCE"><b>RESISTANCE:</b></label>
         <input type="text" name="resistance" id="RESISTANCE" placeholder="Enter the Value" value="{{r}}">
     </div>
     <br>
@@ -80,7 +97,7 @@ form{
     <br>
     <br>
     <div class="power">
-        <label for="POWER">POWER:</label>
+        <label for="POWER"><b>POWER:</b></label>
         <input type="text" name="POWER" id="POWER" placeholder="Answer" value="{{power}}">
         
     </div>
