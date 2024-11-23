@@ -17,25 +17,25 @@ h1{
     color: grey;
 }
 form{
-    background: linear-gradient(to bottom,red,yellow,red)
+    background: linear-gradient(to bottom,red,yellow,red);
 }
 
     </style>
 </head>
 <body>
     <h1 align="center" > power of a lamp filament</h1>
-    <form align="center" method='POST'>
-    {% csrf_token %}
+    <form align="center" method="POST">
+    {%csrf_token%}
      
     <div class="power">
 
         <label for="INTENSITY">INTENSITY:</label>
-        <input type="text" name="INTENSITY" id="INTENSITY" placeholder="Enter the Value" value="{{i}}">
+        <input type="text" name="intensity" id="INTENSITY" placeholder="Enter the Value" value="{{i}}">
     </div>
     <br>
     <div class="power">
         <label for="RESISTANCE">RESISTANCE:</label>
-        <input type="text" name="RESISTANCE" id="RESISTANCE" placeholder="Enter the Value" value="{{r}}">
+        <input type="text" name="resistance" id="RESISTANCE" placeholder="Enter the Value" value="{{r}}">
     </div>
     <br>
     <input type="submit" value="CALCULATE">

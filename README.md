@@ -55,25 +55,25 @@ h1{
     color: grey;
 }
 form{
-    background: linear-gradient(to bottom,red,yellow,red)
+    background: linear-gradient(to bottom,red,yellow,red);
 }
 
     </style>
 </head>
 <body>
     <h1 align="center" > power of a lamp filament</h1>
-    <form align="center" method='POST'>
-    {% csrf_token %}
+    <form align="center" method="POST">
+    {%csrf_token%}
      
     <div class="power">
 
         <label for="INTENSITY">INTENSITY:</label>
-        <input type="text" name="INTENSITY" id="INTENSITY" placeholder="Enter the Value" value="{{i}}">
+        <input type="text" name="intensity" id="INTENSITY" placeholder="Enter the Value" value="{{i}}">
     </div>
     <br>
     <div class="power">
         <label for="RESISTANCE">RESISTANCE:</label>
-        <input type="text" name="RESISTANCE" id="RESISTANCE" placeholder="Enter the Value" value="{{r}}">
+        <input type="text" name="resistance" id="RESISTANCE" placeholder="Enter the Value" value="{{r}}">
     </div>
     <br>
     <input type="submit" value="CALCULATE">
@@ -93,20 +93,20 @@ views.py
 from django.shortcuts import render
 def powerlamp(request): 
     context={} 
-    context['power'] = "0" 
-    context['i'] = "0" 
-    context['r'] = "0" 
-    if request.method == 'POST': 
+    context['power']="0" 
+    context['i']="0" 
+    context['r']="0" 
+    if request.method=='POST': 
         print("POST method is used")
-        i = request.POST.get('intensity','0')
-        r = request.POST.get('resistance','0')
+        i=request.POST.get('intensity','0')
+        r=request.POST.get('resistance','0')
         print('request=',request) 
         print('intensity=',i) 
         print('resistance=',r) 
-        power = (int(i) ** 2 )* int(r) 
-        context['power'] = power 
-        context['i'] = i
-        context['r'] = r 
+        power=(int(i) ** 2 ) * int(r) 
+        context['power']=power
+        context['i']=i
+        context['r']=r 
         print('Power=',power) 
     return render(request,'thalaforareason/tfar.html',context)
 
@@ -117,8 +117,8 @@ from django.urls import path
 from thalaforareason import views 
 urlpatterns = [ 
     path('admin/', admin.site.urls), 
-    path('poweroflamp/',views.powerlamp,name="poweroflamp"),
-    path('',views.powerlamp,name="poweroflamproot")
+    path('powerlamp/',views.powerlamp,name="powerlamp"),
+    path('',views.powerlamp,name="powerlamproot")
 ]
 ```
 
